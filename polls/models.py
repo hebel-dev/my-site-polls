@@ -15,7 +15,7 @@ class Question(models.Model):
         return self.create_at >= timezone.now() - datetime.timedelta(days = 1)   
 
 class Choice(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)# w querysetcie dodaj question_id=1
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
 
