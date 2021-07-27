@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from polls.models import Question
 # def index(request):
 #     return HttpResponse(
 #         "hello, world. you're at the pools"
@@ -11,7 +11,8 @@ from django.http import HttpResponse
 #     )
 
 def detail(request, question_id):
-    return HttpResponse("You're looking at question %s." % question_id)
+    question = Question.objects.get(id=question_id)
+    return HttpResponse(f"You're looking at question {question}")
 
 def results(request, question_id):
     response = "You're looking at the results of question %s."

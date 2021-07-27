@@ -5,8 +5,8 @@ urlpatterns = [
     # path('index/', views.index, name='index'),
     # path('endex/', views.endex, name='endex'),
 
-    # ex: /polls/
-    path('', views.index, name='index'),
+    # # ex: /polls/
+    # path('', views.index, name='index'),
     # ex: /polls/5/
     path('<int:question_id>/', views.detail, name='detail'),
     # ex: /polls/5/results/
